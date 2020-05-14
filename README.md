@@ -37,3 +37,10 @@ We can identify how rapidly the COVID-19 spreads across states by comparing the 
 - There are 13 features and 1416 rows in this data.
 - From this data set, we can compare COVID-19 deaths of various age groups of people and also compare that to the deaths caused by other diseases
 - Second and Third question can be potentially answered by this data.
+
+### 3. us_states_covid19_daily
+- This dataset is downloaded from https://www.kaggle.com/sudalairajkumar/covid19-in-usa?select=us_states_covid19_daily.csv
+- Data is obtained from the COVID-19 Tracking project, which is a compilation of data collected from each state.
+- There are 27 features and  3825 rows in this data.
+- From this data set, we can compare COVID-19 deaths of various age groups of people and also compare that to the deaths caused by other diseases.
+- How is the spread of COVID-19 across different states in the United States?
