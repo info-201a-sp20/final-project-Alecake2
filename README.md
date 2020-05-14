@@ -13,3 +13,11 @@ This [project](https://graphics.reuters.com/HEALTH-CORONAVIRUS/ETHICS/oakpezqllv
 
 #### 3.How Long Will a Vaccine Really Take?
 This [project](https://www.nytimes.com/interactive/2020/04/30/opinion/coronavirus-covid-vaccine.html) ceated by Stuart A. Thompson for New York Times Opinion gives estimation on the release day of coronavirus vaccine. His estimation is based on traditional viccine timelines, which can take decades.
+
+### Data-Driven Questions
+1. How does COVID-19 impact different age groups compared to other diseases?
+2. Are there any associations between the number of positive tests and gender and ethnicity?
+3. How is the spread of COVID-19 across different states in the United States?
+
+### How to answer our questions with the dataframe
+We can identify how rapidly the COVID-19 spreads across states by comparing the number of testing that is positive relative to the total of testing conducted (positive, negative, pending). We can also compare the affected rate in different age  or gender groups and focus on college students’ affecting rate. 
