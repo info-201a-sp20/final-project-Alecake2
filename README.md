@@ -20,4 +20,4 @@ This [project](https://www.nytimes.com/interactive/2020/04/30/opinion/coronaviru
 3. How is the spread of COVID-19 across different states in the United States?
 
 ### How to answer our questions with the dataframe
-We can identify how rapidly the COVID-19 spreads across states by comparing the number of testing that is positive relative to the total of testing conducted (positive, negative, pending). We can also compare the affected rate in different age  or gender groups and focus on college students’ affecting rate. 
+We can identify how rapidly the COVID-19 spreads across states by comparing the number of testing that is positive relative to the total of testing conducted (positive, negative, pending). We can also compare the affected rate in different age  or gender groups and focus on college students’ affecting rate.
