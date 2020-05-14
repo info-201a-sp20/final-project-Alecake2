@@ -31,7 +31,7 @@ We can identify how rapidly the COVID-19 spreads across states by comparing the 
 <<<<<<< HEAD
 - Second and Third question can be potentially answered by this data. 
 
-1. Provisional_COVID-19_Death_Counts_by_Sex__Age__and_State:
+2. Provisional_COVID-19_Death_Counts_by_Sex__Age__and_State:
 - This dataset is downloaded from 
 https://data.cdc.gov/NCHS/Provisional-COVID-19-Death-Counts-by-Sex-Age-and-S/9bhg-hcku
 - This data was collected and provided by the National Center for Health Statistics
