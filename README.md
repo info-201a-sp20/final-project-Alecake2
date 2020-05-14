@@ -17,7 +17,7 @@ This [project](https://www.nytimes.com/interactive/2020/04/30/opinion/coronaviru
 ### Data Driven Questions
 #### 1. How does COVID-19 impact different age groups compared to other diseases?
 #### 2. Are there any associations between the number of positive tests and gender and ethnicity?
-W#### 3. hat is the difference in testing results across different states?
+#### 3. What is the difference in testing results across different states?
 
 ### Datasets
 1. US_counties_COVID19_health_weather_data: 
