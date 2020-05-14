@@ -24,28 +24,23 @@ This [project](https://www.nytimes.com/interactive/2020/04/30/opinion/coronaviru
 We can identify how rapidly the COVID-19 spreads across states by comparing the number of testing that is positive relative to the total of testing conducted (positive, negative, pending). We can also compare the affected rate in different age  or gender groups and focus on college students’ affecting rate.
 
 ### Datasets
-## 1. US_counties_COVID19_health_weather_data:
+#### 1. US_counties_COVID19_health_weather_data:
 - This dataset is downloaded from  https://www.kaggle.com/johnjdavisiv/us-counties-covid19-weather-sociohealth-data
--
-- There are 111367 observations in the data.
+- This dataset is created by John Davis.
 - There are 227 features in the data.
-- Second and Third question can be potentially answered by this data. 
+- There are 111367 observations in the data.
 - Second and Third question can be potentially answered by this data.
 
-## 2. Provisional_COVID-19_Death_Counts_by_Sex__Age__and_State:
+#### 2. Provisional_COVID-19_Death_Counts_by_Sex__Age__and_State:
 - This dataset is downloaded from https://data.cdc.gov/NCHS/Provisional-COVID-19-Death-Counts-by-Sex-Age-and-S/9bhg-hcku
 - This data was collected and provided by the National Center for Health Statistics
-- There are 13 features and 1416 rows in this data.
-- From this data set, we can compare COVID-19 deaths of various age groups of people and also compare that to the deaths caused by other diseases
-- Second and Third question can be potentially answered by this data.
+- There are 13 features in this data.
+- There are 1416 observations in this data.
+- From this data set, we can compare COVID-19 deaths of various age groups of people and also compare that to the deaths caused by other diseases.
 
-<<<<<<< HEAD
-### 3. us_states_covid19_daily
+#### 3. us_states_covid19_daily
 - This dataset is downloaded from https://www.kaggle.com/sudalairajkumar/covid19-in-usa?select=us_states_covid19_daily.csv
 - Data is obtained from the COVID-19 Tracking project, which is a compilation of data collected from each state.
-- There are 27 features and  3825 rows in this data.
-- From this data set, we can compare COVID-19 deaths of various age groups of people and also compare that to the deaths caused by other diseases.
-- How is the spread of COVID-19 across different states in the United States?
-=======
-
->>>>>>> 14051fd31ee981158c320fa241f8b194ee0d0c0b
+- There are 27 features in this data.
+- There are 3825 observations in this data.
+- From this data set, the question "How is the spread of COVID-19 across different states in the United States?" can be answered.
