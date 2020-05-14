@@ -19,12 +19,16 @@ This [project](https://www.nytimes.com/interactive/2020/04/30/opinion/coronaviru
 #### 2. Are there any associations between the number of positive tests and gender and ethnicity?
 #### 3. What is the difference in testing results across different states?
 
+### How to answer our questions with the dataframe
+We can identify how rapidly the COVID-19 spreads across states by comparing the number of testing that is positive relative to the total of testing conducted (positive, negative, pending). We can also compare the affected rate in different age  or gender groups and focus on college students’ affecting rate.
+
 ### Datasets
-1. US_counties_COVID19_health_weather_data: 
+1. US_counties_COVID19_health_weather_data:
 - This dataset is downloaded from  https://www.kaggle.com/johnjdavisiv/us-counties-covid19-weather-sociohealth-data
-- 
-- There are 111367 observations in the data. 
+-
+- There are 111367 observations in the data.
 - There are 227 features in the data.
+<<<<<<< HEAD
 - Second and Third question can be potentially answered by this data. 
 
 1. Provisional_COVID-19_Death_Counts_by_Sex__Age__and_State:
@@ -33,3 +37,6 @@ https://data.cdc.gov/NCHS/Provisional-COVID-19-Death-Counts-by-Sex-Age-and-S/9bh
 - This data was collected and provided by the National Center for Health Statistics
 - There are 13 features and 1416 rows in this data.
 -  From this data set, we can compare COVID-19 deaths of various age groups of people and also compare that to the deaths caused by other diseases
+=======
+- Second and Third question can be potentially answered by this data.
+>>>>>>> 7af2553ad750510631d56b87258a55a0d27063a5
