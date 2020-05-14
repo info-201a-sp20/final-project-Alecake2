@@ -25,7 +25,7 @@ We can identify how rapidly the COVID-19 spreads across states by comparing the 
 ### Datasets
 #### 1. US_counties_COVID19_health_weather_data:
 - This dataset is downloaded from  https://www.kaggle.com/johnjdavisiv/us-counties-covid19-weather-sociohealth-data
-- This dataset is created by John Davis.
+- This dataset is created by John Davis, and it contains a variety of information from multiple perspective about every county in the U.S., including Covid-19, economics, public health, and ethnicity percentages etc. 
 - There are 227 features in the data.
 - There are 111367 observations in the data.
 - Second and Third question can be potentially answered by this data.
