@@ -37,6 +37,5 @@ https://data.cdc.gov/NCHS/Provisional-COVID-19-Death-Counts-by-Sex-Age-and-S/9bh
 - This data was collected and provided by the National Center for Health Statistics
 - There are 13 features and 1416 rows in this data.
 -  From this data set, we can compare COVID-19 deaths of various age groups of people and also compare that to the deaths caused by other diseases
-=======
-- Second and Third question can be potentially answered by this data.
->>>>>>> 7af2553ad750510631d56b87258a55a0d27063a5
+.
+
