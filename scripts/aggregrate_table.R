@@ -4,7 +4,7 @@ rm(list = ls())
 
 library(dplyr)
 
-covid_cases <- read.csv("data/us_states_covid19_daily.csv", stringsAsFactors = FALSE)
+covid_cases <- read.csv("../data/us_states_covid19_daily.csv", stringsAsFactors = FALSE)
 
 colnames(covid_cases) #column names
 nrow(covid_cases) #`number of rows
