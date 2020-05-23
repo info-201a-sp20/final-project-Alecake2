@@ -7,8 +7,8 @@ output: html_document
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
-source("/scripts/Summary.R")
-source("/scripts/aggregated_table.R")
+source("scripts/Summary.R")
+source("scripts/aggregated_table.R")
 ```
 
 ## Our Domain of Interest and Data Set
