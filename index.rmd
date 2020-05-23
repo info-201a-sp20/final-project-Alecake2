@@ -1,0 +1,27 @@
+---
+title: "Midpoint"
+author: "RuoluYe"
+date: "5/20/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+source("/scripts/Summary.R")
+source("/scripts/aggregated_table.R")
+```
+
+## Our Domain of Interest and Data Set
+Our domain of interest is the impact of COVID-19 in the US because it is relevant to our daily life at this moment. For datasets, we found a general dataset about each U.S counties that collects information related to their weather, socio/health and COVID-19 situation. We also found a dataset about provisional COVID-19 Death Counts based on states, sex and ages that could help us understand the bigger picture. Finally 
+
+
+## Summary Infomation
+This summary table ...`r get_summary_info`
+(description)
+## A Summary Table
+table & observations
+```{r data, echo=FALSE, comment=""}
+print.data.frame(state_testing)
+```
+## Charts
+purpose, render, describe observations.
