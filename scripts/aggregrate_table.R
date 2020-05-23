@@ -66,3 +66,4 @@ state_testing <- info_covid(covid_cases)
 # COVID-19 cases among the states.
 # We should notice that even NY has a significantly higher number of testing
 # conducted than NJ, the percentage for positive cases in NY is lower than the NJ.
+# Some states conducted not enough testing for COVID-19.
