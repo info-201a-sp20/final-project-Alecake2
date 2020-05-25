@@ -9,7 +9,7 @@ get_summary_info <- function(data_set) {
   ret <- list (
     # Max covid deaths in the US
     max_cases_covid_19 = select(data_set, COVID.19.Deaths) %>%
-      filter(State == United_States, Sex = "All Sexes") %>%
+      filter(State == "United States", Sex == "All Sexes") %>%
       summarize(max_cases = max(COVID.19.Deaths)) %>%
       pull(max_cases),
     # State with most covid deaths
@@ -20,7 +20,7 @@ get_summary_info <- function(data_set) {
       pull(state), 
     # Age group in the US with most covid deaths
     us_age_group_biggest = select(data_set, COVID.19.Deaths, Age.group) %>%
-      filter(State == "United States", age_group != "All ages", sex == "All Sexes", max_covid == max(COVID.19.Deaths)) %>%
+      filter(State == "United States", age_group != "All Ages", sex == "All Sexes", max_covid == max(COVID.19.Deaths)) %>%
       pull(age_group),
    # Max total deaths in the US 
     max_total_death_us = select(data_set, Total.Deaths) %>%
