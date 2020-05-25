@@ -4,23 +4,46 @@ library(gridExtra)
 library(ggthemes)
 library(dplyr)
 library("plotly")
+library("rbokeh")
 covid_cases <- read.csv("../data/us_states_covid19_daily.csv",
                         stringsAsFactors = FALSE)
 
 result_by_state <- covid_cases %>%
-  select(state, positive, negative, totalTestResults) %>%
+  select(state, hospitalizedCumulative, recovered) %>%
   group_by(state) %>% 
+  #na.omit() %>%
   summarise(
-    positive = sum(positive, na.rm = TRUE),
-    negative = sum(negative, na.rm = TRUE),
-    totalTestResults = sum(totalTestResults, na.rm = TRUE)
+    hospitalize = max(hospitalizedCumulative, na.rm = TRUE),
+    recovered = max(recovered, na.rm = TRUE)
+  )
+
+plot_ly(
+  data = result_by_state, 
+  x = ~hospitalize,
+  y = ~recovered,
+  type = "scatter",
+  mode = "markers"
+)
+
+
+figure(
+  data = result_by_state,
+  title = "Hospitalized By State"
+) %>% 
+  ly_points(
+    hospitalize, 
+    recovered,
+    color = "red"
   )
 
 
+
 ggplotly(
-  ggplot(result_by_state, aes(x = state, y = totalTestResults)) +
-    geom_col(fill = "red") +
-    ggtitle("Testing Result by State") +
+  ggplot(result_by_state, aes(x = state, y = hospitalize)) +
+    #geom_col(fill = "red") +
+    geom_bar(position="dodge",stat="identity") + 
+    coord_flip() +
+    ggtitle("Hospitalize by State") +
     xlab("State") +
     ylab("Tests")
 )
