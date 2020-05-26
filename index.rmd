@@ -39,9 +39,19 @@ Finally, the dataset US State COVID-19 Daily collects number of daily cases in U
 
 
 ## A Summary Table
-
+Our summary table sumamrizes the total number of testings conducted in the U.S. 
+It also demonstrate the number of positive and negative cases, along with the percentage of positive cases over the total number of testing in the states. The data is grouped by states so that we can compare the different situations among the states.
+The table is sorts descendently by the percentage of positive cases over all the testings in each state. 
+From the table, we can conclude that New Jersy has the highest percentage for positive COVID-19 cases among all the states.
+We should notice that even though New York has a significantly higher number of testing conducted than New Jersy, the percentage for positive cases in NY is lower than the NJ. Another insight is some states have not conducted enough testing for COVID-19.
 ```{r data, echo=FALSE, comment=""}
-kable(state_testing)
+df <- state_testing
+colnames(df) <- c("State",
+                  "Total Positive Cases",
+                  "Total Negative Cases",
+                  "Total Testings",
+                  "Percent of Positive Cases")
+kable(df)
 ```
 
 ## Charts
