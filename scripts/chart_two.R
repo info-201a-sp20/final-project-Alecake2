@@ -1,10 +1,7 @@
 library(dplyr)
 library(tidyverse)
-library(scales)
-library(gridExtra)
-library(ggthemes)
-library("plotly")
 library("leaflet")
+
 covid_cases <- read.csv("data/us_states_covid19_daily.csv",
                         stringsAsFactors = FALSE)
 
@@ -21,32 +18,27 @@ result_by_state <- covid_cases %>%
   select(state, positive, negative, totalTestResults) %>%
   group_by(state) %>% 
   summarise(
-    positive = sum(positive, na.rm = TRUE),
-    negative = sum(negative, na.rm = TRUE),
-    totalTestResults = sum(totalTestResults, na.rm = TRUE)
+    positive = max(positive, na.rm = TRUE),
+    negative = max(negative, na.rm = TRUE),
+    totalTestResults = max(totalTestResults, na.rm = TRUE)
   ) %>% 
-  full_join(organized_coordi)
-
-
-result_by_state <-  result_by_state %>%
+  full_join(organized_coordi) %>%
+  mutate(positive_rate = positive/totalTestResults * 100) %>%
   mutate(radius = (positive / max(positive)) * 50)
 
-test_map <- leaflet(result_by_state) %>%
+plot_two <- leaflet(result_by_state) %>%
   addProviderTiles("CartoDB.Positron") %>%
   setView(lng = -98.5685, lat = 39.82406, zoom = 4) %>%
   addCircleMarkers(
-    # latitudes of incidents
     lat = result_by_state$usa_state_latitude,
-    # longitudes of incidents
     lng = result_by_state$usa_state_longitude,
-    # set the size of each marker base on people killed
-
     radius = ~radius,
     popup = paste(
       "Total Test:", result_by_state$totalTestResults, "<br>",
       "Positive:", result_by_state$positive, "<br>",
       "Negative:", result_by_state$negative, "<br>",
-      "State", result_by_state$state
+      "State", result_by_state$state, "<br>",
+      "Positive Rate", round(result_by_state$positive_rate,2), "%"
     )
   )
 

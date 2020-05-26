@@ -7,8 +7,6 @@ output: html_document
 
 ```{r setup, echo = FALSE, include=FALSE}
 library("knitr")
-library("dplyr")
-library("rbokeh")
 source("scripts/aggregated_table.R")
 #source("scripts/Summary.R")
 source("scripts/chart_one.R")
@@ -47,11 +45,11 @@ kable(state_testing)
 ```
 
 ## Charts
-Our first chart is a bar chart that reflects the total hospitalized people in each state up until the lastest day the data is collected. We include this chart becasue we would like to compare the cases between states and understand the general situation the U.S is having right now. From this bar chart we could see that New York State has far more identified cases than any other states. While other states all have fewer than 10,000 cases, New York has over 73,000. 
+Our first chart is a line chart that reflects the daily Covid-19 death rate from this January to mid-May. We include this chart becasue we would like to see how the trend of the death rate changes over time. According to the graph, the death rate spiked up at the end of February and kept increasing until the end of March. Then steadiley decreased for about a month before it came back up again, and now the trend have been relatively constant for about a month. 
 `r plot_one`
 
 Our second chart is a map that uses circle to locate each state, and shows the positive cases of COVID-19 with the size of the circle. We included this chart becasue we would appreciate a map that can shows the geometric location and visualize the postive cases number at the same time. From this map, we can tell that the Northeast ara suffers the most, and California has quite a few cases compared to other west states. According to common knowledge, we see that the more populated is the state, the more cases it has, which is also shown by the fact that the Midwest generally has fewer cases.  
-`r test_map`
+`r plot_two`
 
-Our third chart is a scatter plot that shows the daily positive COVID-19 cases from this January to mid-May. We includ this plot becasue we would like to learn the basic trend of the growth of postive cases in the U.S. We sadly found that up until the middle of March, the growth is controlled and stedy. Starting from the late March, the growth of positive cases has increased from less than 500 to almost 190,000, and the number has not been decreased at all. We intrepret that this result can be due to there were more test after late March.
+Our third chart is a scatter plot that shows the percent of smoking population and Covid-19 death rate of each state in the U.S. We include this chart because we would like to see if there is an associate between smoking and covid-19 death, since smoking damages people's lungs, and the impact of covid-19 is primarily on lungs as well. According to our plot, there is no significant correlation between smoking proportion and covid-19 death rate. 
 `r plot_three`
