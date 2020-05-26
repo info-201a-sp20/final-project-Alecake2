@@ -37,3 +37,6 @@ vignettes/*.pdf
 
 # Shiny token, see https://shiny.rstudio.com/articles/shinyapps.html
 rsconnect/
+
+# large dataset
+data\US_counties_COVID19_health_weather_data.csv

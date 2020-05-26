@@ -1,9 +1,7 @@
 # Analysis on COVID-19 in the United States according to different states
 
-rm(list = ls())
-
-library(dplyr)
-covid_cases <- read.csv("../data/us_states_covid19_daily.csv",
+library("dplyr")
+covid_cases <- read.csv("data/us_states_covid19_daily.csv",
                         stringsAsFactors = FALSE)
 
 colnames(covid_cases) # column names

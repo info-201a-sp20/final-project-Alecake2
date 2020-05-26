@@ -1,27 +1,57 @@
 ---
-title: "Midpoint"
+title: "Midpoint Deliverable"
 author: "RuoluYe"
 date: "5/20/2020"
 output: html_document
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-source("scripts/Summary.R")
+```{r setup, echo = FALSE, include=FALSE}
+library("knitr")
+library("dplyr")
+library("rbokeh")
 source("scripts/aggregated_table.R")
+source("scripts/Summary.R")
+source("scripts/chart_one.R")
+source("scripts/chart_two.R")
+source("scripts/chart_three.R")
 ```
 
-## Our Domain of Interest and Data Set
-Our domain of interest is the impact of COVID-19 in the US because it is relevant to our daily life at this moment. For datasets, we found a general dataset about each U.S counties that collects information related to their weather, socio/health and COVID-19 situation. We also found a dataset about provisional COVID-19 Death Counts based on states, sex and ages that could help us understand the bigger picture. Finally 
+# COVID-2019 Brief Data Analysis
+
+## Introduction
+Our domain of interest is the impact of COVID-19 in the US. This spring, we have this unfortunate outbreak of virus that has threathen hundreds of thoudsands of lives int the U.S., and even more around the world. Our group hopes that, with our effort and analysis on multiple datasets about the COVID-19, we can arouse more  viligance and help people to understand this disease better.  
+
+The first dataset is a comprehensive one about each U.S county, which collects information related to their weather, socio/health and COVID-19 situation. Since its size exceeds the upload limit, we decided to keep it local.
+
+We also found a dataset about provisional COVID-19 Death Counts based on states, sex and ages that could help us understand the bigger picture.
+
+Finally, the dataset US State COVID-19 Daily collects number of daily cases in USA, and we have a helper dataset that stores the latitude and longitude values of states and country to assist our charts. 
 
 
 ## Summary Infomation
-This summary table ...`r get_summary_info`
-(description)
-## A Summary Table
-table & observations
-```{r data, echo=FALSE, comment=""}
-print.data.frame(state_testing)
+```{r, echo=FALSE, include=FALSE}
+info<-get_summary_info(data_set)
+info$max_cases_covid_19
+info$State_most_cases_covid_19
+info$us_age_group_biggest
+info$max_total_death_us
+info$avg_covid_deaths_males
+info$avg_covid_deaths_females
 ```
+
+
+## A Summary Table
+
+```{r data, echo=FALSE, comment=""}
+kable(state_testing)
+```
+
 ## Charts
-purpose, render, describe observations.
+Our first chart is a bar chart that reflects the total hospitalized people in each state up until the lastest day the data is collected. We include this chart becasue we would like to compare the cases between states and understand the general situation the U.S is having right now. From this bar chart we could see that New York State has far more identified cases than any other states. While other states all have fewer than 10,000 cases, New York has over 73,000. 
+`r plot_one`
+
+Our second chart is a map that uses circle to locate each state, and shows the positive cases of COVID-19 with the size of the circle. We included this chart becasue we would appreciate a map that can shows the geometric location and visualize the postive cases number at the same time. From this map, we can tell that the Northeast ara suffers the most, and California has quite a few cases compared to other west states. According to common knowledge, we see that the more populated is the state, the more cases it has, which is also shown by the fact that the Midwest generally has fewer cases.  
+`r test_map`
+
+Our third chart is a scatter plot that shows the daily positive COVID-19 cases from this January to mid-May. We includ this plot becasue we would like to learn the basic trend of the growth of postive cases in the U.S. We sadly found that up until the middle of March, the growth is controlled and stedy. Starting from the late March, the growth of positive cases has increased from less than 500 to almost 190,000, and the number has not been decreased at all. We intrepret that this result can be due to there were more test after late March.
+`r plot_three`

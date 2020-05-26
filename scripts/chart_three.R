@@ -5,7 +5,7 @@ library(ggthemes)
 library(dplyr)
 library("plotly")
 library("rbokeh")
-covid_cases <- read.csv("../data/us_states_covid19_daily.csv",
+covid_cases <- read.csv("data/us_states_covid19_daily.csv",
                         stringsAsFactors = FALSE)
 
 df <- covid_cases %>%
@@ -15,7 +15,8 @@ df <- covid_cases %>%
 
 df$date <- as.character(df$date)
 
-plot_ly(
+#everyday positive
+plot_three <- plot_ly(
   data = df,
   x = ~date,
   y = ~positive,
