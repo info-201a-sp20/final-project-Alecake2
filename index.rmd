@@ -10,7 +10,7 @@ library("knitr")
 library("dplyr")
 library("rbokeh")
 source("scripts/aggregated_table.R")
-source("scripts/Summary.R")
+#source("scripts/Summary.R")
 source("scripts/chart_one.R")
 source("scripts/chart_two.R")
 source("scripts/chart_three.R")
@@ -30,13 +30,13 @@ Finally, the dataset US State COVID-19 Daily collects number of daily cases in U
 
 ## Summary Infomation
 ```{r, echo=FALSE, include=FALSE}
-info<-get_summary_info(data_set)
-info$max_cases_covid_19
-info$State_most_cases_covid_19
-info$us_age_group_biggest
-info$max_total_death_us
-info$avg_covid_deaths_males
-info$avg_covid_deaths_females
+#info<-get_summary_info(data_set)
+#info$max_cases_covid_19
+#info$State_most_cases_covid_19
+###info$us_age_group_biggest
+#info$max_total_death_us
+#info$avg_covid_deaths_males
+#info$avg_covid_deaths_females
 ```
 
 
