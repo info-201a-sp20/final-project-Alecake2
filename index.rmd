@@ -8,7 +8,7 @@ output: html_document
 ```{r setup, echo = FALSE, include=FALSE}
 library("knitr")
 source("scripts/aggregated_table.R")
-#source("scripts/Summary.R")
+source("scripts/Summary.R")
 source("scripts/chart_one.R")
 source("scripts/chart_two.R")
 source("scripts/chart_three.R")
@@ -17,26 +17,19 @@ source("scripts/chart_three.R")
 # COVID-2019 Brief Data Analysis
 
 ## Introduction
-Our domain of interest is the impact of COVID-19 in the US. This spring, we have this unfortunate outbreak of virus that has threathen hundreds of thoudsands of lives int the U.S., and even more around the world. Our group hopes that, with our effort and analysis on multiple datasets about the COVID-19, we can arouse more  viligance and help people to understand this disease better.  
-
-The first dataset is a comprehensive one about each U.S county, which collects information related to their weather, socio/health and COVID-19 situation. Since its size exceeds the upload limit, we decided to keep it local.
-
-We also found a dataset about provisional COVID-19 Death Counts based on states, sex and ages that could help us understand the bigger picture.
-
-Finally, the dataset US State COVID-19 Daily collects number of daily cases in USA, and we have a helper dataset that stores the latitude and longitude values of states and country to assist our charts. 
-
+Our domain of interest is the impact of COVID-19 in the US. This spring, we have this unfortunate outbreak of virus that has threathen hundreds of thoudsands of lives int the U.S., and even more around the world. Our group hopes that, with our effort and analysis on multiple datasets about the COVID-19, we can arouse more viligance and help people to understand this disease better. The first dataset is a comprehensive one about each U.S county, which collects information related to their weather, socio/health and COVID-19 situation. Since its size exceeds the upload limit, we decided to keep it local. We also found a dataset about provisional COVID-19 Death Counts based on states, sex and ages that could help us understand the bigger picture. Finally, the dataset US State COVID-19 Daily collects number of daily cases in USA, and we have a helper dataset that stores the latitude and longitude values of states and country to assist our charts. 
 
 ## Summary Infomation
 ```{r, echo=FALSE, include=FALSE}
-#info<-get_summary_info(data_set)
-#info$max_cases_covid_19
-#info$State_most_cases_covid_19
-###info$us_age_group_biggest
-#info$max_total_death_us
-#info$avg_covid_deaths_males
-#info$avg_covid_deaths_females
+info <- get_summary_info(data_set)
+info$num_most_cases
+info$place_most_cases_covid_19
+info$us_age_group_biggest
+info$total_death_us
+info$covid_deaths_males
+info$covid_deaths_females
 ```
-
+We used the Provisional COVID-19 Death Counts dataset to help us understand the general situation the U.S. is in. We would like to look into the impact on different age group, sex, and geometric location. In general, COVID-19 has caused `r info$total_death_us` deaths in the U.S. so far. The **place** that has the most deaths for COVID-19 is `r info$place_most_cases_covid_19`, with the number being `r info$num_most_cases`, which has surpassed many states. The **age group** that has the most people who died from COVID-19 in the U.S. is `r info$us_age_group_biggest`. For **male**, the total deaths of COVID-19 is `r info$covid_deaths_males`, and for **female**, the total deaths is `r info$covid_deaths_females`. 
 
 ## A Summary Table
 Our summary table sumamrizes the total number of testings conducted in the U.S. 
