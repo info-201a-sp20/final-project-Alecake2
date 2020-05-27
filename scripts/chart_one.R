@@ -2,10 +2,13 @@
 library("tidyverse")
 library("plotly")
 
-
+# Load the data needed for the chart
 covid_cases <- read.csv("data/cleaned_data.csv",
                         stringsAsFactors = FALSE)
 
+# Extract date, cases and deaths from the
+# dataframe and calculate the total cases and
+# death for each day.
 cases_and_deaths <- covid_cases %>%
   select(date, cases, deaths) %>%
   group_by(date) %>%
@@ -15,6 +18,9 @@ cases_and_deaths <- covid_cases %>%
     death_rate = round(deaths / cases * 100, 2)
   )
 
+# Create a line plot with date on the x axis and
+# death_rate of covid-19 for the United States on
+# the y axis.
 create_line_plot <- function(df) {
   ggplotly(
     ggplot(df, aes(x = date, y = death_rate, group = 1)) +
@@ -27,4 +33,6 @@ create_line_plot <- function(df) {
   )
 }
 
+# Create a plot by using the data in
+# cases_and_deaths dataframe.
 plot_one <- create_line_plot(cases_and_deaths)

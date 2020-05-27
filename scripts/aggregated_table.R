@@ -34,4 +34,3 @@ info_covid <- function(dataframe) {
 
 # this table will give out the summary for the testing conducted in the states
 state_testing <- info_covid(covid_cases)
-

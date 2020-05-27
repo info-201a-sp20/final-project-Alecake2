@@ -2,9 +2,12 @@
 library("tidyverse")
 library("plotly")
 
+# Load the data needed for creating the chart.
 covid_cases <- read.csv("data/cleaned_data.csv",
                         stringsAsFactors = FALSE)
 
+# Create a dataframe that contains name, smoking population percetage,
+# and covid-19 death rate of each state in the U.S.
 death_and_smoking_rate <- covid_cases %>%
   select(county, state, cases, deaths, percent_smokers, total_population) %>%
   mutate(num_smokers = round(percent_smokers * total_population / 100)) %>%
@@ -21,6 +24,11 @@ death_and_smoking_rate <- covid_cases %>%
     smoker_percentage = sum(smokers) / sum(total_population) * 100
   )
 
+# This function takes in a dataframe and create a scatter plot
+# with smoking population percentage on the x axis and covid-19
+# death rate on the y axis. Upon hovering on each scatter, the
+# popup will show the name, covid 19 death rate, and smoking
+# population rate of the corresponding state.
 create_scatter_plot <- function(df) {
   plot_ly(
     data = df,
@@ -41,4 +49,6 @@ create_scatter_plot <- function(df) {
          )
 }
 
+# Create the scatter plot by using the dataframe oranized
+# previously.
 plot_three <- create_scatter_plot(death_and_smoking_rate)
