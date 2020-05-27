@@ -22,17 +22,11 @@ This [project](https://www.nytimes.com/interactive/2020/04/30/opinion/coronaviru
 ### How to answer our questions with the dataframe
 We can identify how rapidly the COVID-19 spreads across states by comparing the number of testing that is positive relative to the total of testing conducted (positive, negative, pending). We can also compare the affected rate in different age  or gender groups and focus on college students’ affecting rate.
 
-<<<<<<< HEAD
-### Datasets
-#### 1. US_counties_COVID19_health_weather_data:
-- This dataset is downloaded from  https://www.kaggle.com/johnjdavisiv/us-counties-covid19-weather-sociohealth-data
-- This dataset is created by John Davis.
-=======
+
 ## Datasets
 #### 1. US_counties_COVID19_health_weather_data:
 - This dataset is downloaded from  https://www.kaggle.com/johnjdavisiv/us-counties-covid19-weather-sociohealth-data
 - This dataset is created by John Davis, and it contains a variety of information from multiple perspective about every county in the U.S., including Covid-19, economics, public health, and ethnicity percentages etc.
->>>>>>> 9ea89ef332c74e8ca1f1b0c32e9e4c34d6a4b350
 - There are 227 features in the data.
 - There are 111367 observations in the data.
 - Second and Third question can be potentially answered by this data.
