@@ -1,15 +1,15 @@
+# Set up
 library("tidyverse")
-library("scales")
-library("gridExtra")
-library("ggthemes")
-library("dplyr")
 library("plotly")
-library("rbokeh")
 
+# Load the data needed for the chart
 covid_cases <- read.csv("data/cleaned_data.csv",
                         stringsAsFactors = FALSE)
 
-df <- covid_cases %>%
+# Extract date, cases and deaths from the
+# dataframe and calculate the total cases and
+# death for each day.
+cases_and_deaths <- covid_cases %>%
   select(date, cases, deaths) %>%
   group_by(date) %>%
   summarise(
@@ -18,13 +18,21 @@ df <- covid_cases %>%
     death_rate = round(deaths / cases * 100, 2)
   )
 
+# Create a line plot with date on the x axis and
+# death_rate of covid-19 for the United States on
+# the y axis.
+create_line_plot <- function(df) {
+  ggplotly(
+    ggplot(df, aes(x = date, y = death_rate, group = 1)) +
+      geom_line() +
+      ggtitle("Death Rate Over Time") +
+      xlab("Date") +
+      ylab("Death Rate (%)") +
+      theme_bw() +
+      theme(axis.text.x = element_text(size = rel(0.5), angle = 90))
+  )
+}
 
-plot_one <- ggplotly(
-  ggplot(df, aes(x = date, y = death_rate, group = 1)) +
-    geom_line() +
-    ggtitle("Death Rate Over Time") +
-    xlab("Date") +
-    ylab("Death Rate (%)") +
-    theme_bw() +
-    theme(axis.text.x = element_text(size = rel(0.5), angle = 90))
-)
+# Create a plot by using the data in
+# cases_and_deaths dataframe.
+plot_one <- create_line_plot(cases_and_deaths)
