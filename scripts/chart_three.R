@@ -1,19 +1,13 @@
-library(tidyverse)
-library(scales)
-library(gridExtra)
-library(ggthemes)
-library(dplyr)
+# Set up
+library("tidyverse")
 library("plotly")
-library("rbokeh")
 
-#covid_cases <- read.csv("data/us_states_covid19_daily.csv",
-                        #stringsAsFactors = FALSE)
 covid_cases <- read.csv("data/cleaned_data.csv",
                         stringsAsFactors = FALSE)
 
-df <- covid_cases %>%
+death_and_smoking_rate <- covid_cases %>%
   select(county, state, cases, deaths, percent_smokers, total_population) %>%
-  mutate(num_smokers = round(percent_smokers * total_population /100)) %>%
+  mutate(num_smokers = round(percent_smokers * total_population / 100)) %>%
   group_by(county) %>%
   summarise(cases = max(cases, na.rm = FALSE),
             state = max(state),
@@ -27,21 +21,24 @@ df <- covid_cases %>%
     smoker_percentage = sum(smokers) / sum(total_population) * 100
   )
 
-#everyday positive
-plot_three <- plot_ly(
-  data = df,
-  y = ~death_percentage,
-  x = ~smoker_percentage,
-  type = "scatter",
-  mode = "markers",
-  text = ~state
-) %>% 
-  layout(title = 'Smoking Population And Death Rate',
-         yaxis = list(title = 'Death Rate (%)',
+create_scatter_plot <- function(df) {
+  plot_ly(
+    data = df,
+    y = ~death_percentage,
+    x = ~smoker_percentage,
+    type = "scatter",
+    mode = "markers",
+    text = ~state
+  ) %>%
+  layout(title = "Smoking Population And Death Rate",
+         yaxis = list(title = "Death Rate (%)",
                     zeroline = TRUE,
                       range = c(0, 10)
                     ),
-         xaxis = list(title = 'Smoking Population (%)',
+         xaxis = list(title = "Smoking Population (%)",
                       range = c(10, 25)
                       )
          )
+}
+
+plot_three <- create_scatter_plot(death_and_smoking_rate)
