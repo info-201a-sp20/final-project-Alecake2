@@ -13,7 +13,7 @@ covid_cases <- read.csv("data/cleaned_data.csv",
 
 df <- covid_cases %>%
   select(county, state, cases, deaths, percent_smokers, total_population) %>%
-  mutate(num_smokers = round(percent_smokers * total_population /100)) %>%
+  mutate(num_smokers = round(percent_smokers * total_population / 100)) %>%
   group_by(county) %>%
   summarise(cases = max(cases, na.rm = FALSE),
             state = max(state),
@@ -35,13 +35,13 @@ plot_three <- plot_ly(
   type = "scatter",
   mode = "markers",
   text = ~state
-) %>% 
-  layout(title = 'Smoking Population And Death Rate',
-         yaxis = list(title = 'Death Rate (%)',
+) %>%
+  layout(title = "Smoking Population And Death Rate",
+         yaxis = list(title = "Death Rate (%)",
                     zeroline = TRUE,
                       range = c(0, 10)
                     ),
-         xaxis = list(title = 'Smoking Population (%)',
+         xaxis = list(title = "Smoking Population (%)",
                       range = c(10, 25)
                       )
          )

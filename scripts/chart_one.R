@@ -20,11 +20,11 @@ df <- covid_cases %>%
 
 
 plot_one <- ggplotly(
-  ggplot(df, aes(x = date, y = death_rate, group = 1))+
-    geom_line() + 
+  ggplot(df, aes(x = date, y = death_rate, group = 1)) +
+    geom_line() +
     ggtitle("Death Rate Over Time") +
     xlab("Date") +
-    ylab("Death Rate (%)")+
+    ylab("Death Rate (%)") +
     theme_bw() +
-    theme(axis.text.x=element_text(size=rel(0.5), angle=90))
+    theme(axis.text.x = element_text(size = rel(0.5), angle = 90))
 )

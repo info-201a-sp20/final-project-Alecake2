@@ -16,14 +16,14 @@ organized_coordi <- states_coordinates %>%
 
 result_by_state <- covid_cases %>%
   select(state, positive, negative, totalTestResults) %>%
-  group_by(state) %>% 
+  group_by(state) %>%
   summarise(
     positive = max(positive, na.rm = TRUE),
     negative = max(negative, na.rm = TRUE),
     totalTestResults = max(totalTestResults, na.rm = TRUE)
-  ) %>% 
+  ) %>%
   full_join(organized_coordi) %>%
-  mutate(positive_rate = positive/totalTestResults * 100) %>%
+  mutate(positive_rate = positive / totalTestResults * 100) %>%
   mutate(radius = (positive / max(positive)) * 50)
 
 plot_two <- leaflet(result_by_state) %>%
@@ -38,7 +38,6 @@ plot_two <- leaflet(result_by_state) %>%
       "Positive:", result_by_state$positive, "<br>",
       "Negative:", result_by_state$negative, "<br>",
       "State", result_by_state$state, "<br>",
-      "Positive Rate", round(result_by_state$positive_rate,2), "%"
+      "Positive Rate", round(result_by_state$positive_rate, 2), "%"
     )
   )
-
