@@ -1,5 +1,42 @@
 ######### Overview Page #########
+ui <- fluidPage(
+  h1("Info 201 Final Delivarable BF-3"),
+  h2(em("COVID-19"), "Data Analysis and Conclusion"),
+  p("overview"),
+  nav
+)
 
+page_one <- tabPanel(
+  "Interactive 1", 
+  titlePanel("First Interactive: ")
+  #first_page
+)
+
+# Define content for the second page
+page_two <- tabPanel(
+  "Interactive 2",
+  titlePanel("Second Interactive: ")
+)
+
+# Define content for the third page
+page_three <- tabPanel(
+  "Interactive 3",
+  titlePanel("Third Interactive: ")
+)
+
+page_summary <- tabPanel (
+  "Summary Takeaways",
+  titlePanel("Summary Takeaways")
+)
+
+# Pass each page to a multi-page layout
+nav <- navbarPage(
+  "Interactives & Summary",
+  page_one,
+  page_two,
+  page_three,
+  page_summary
+)
 ######### First Interactive ###########
 
 ######### Second Interactive ##########
