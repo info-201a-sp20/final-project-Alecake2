@@ -24,8 +24,8 @@ main_content <- mainPanel(
 
 # Add variable for ui
 page_one <- tabPanel(
-  "Positive Rates",
-  titlePanel("Testing Conducted in the US"),
+  "Interactive 1",
+  titlePanel("Positive Rate over all Testing Conducted in each State"),
   
   p("We are interested to know the detail on testing conducted for each
     state in the US. The positive rate represents the number of posiitve
@@ -35,7 +35,6 @@ page_one <- tabPanel(
     the data is not reliable enough."),
   
   sidebarLayout(
-    position = "right",
     slider,
     main_content)
 )

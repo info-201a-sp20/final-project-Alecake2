@@ -5,8 +5,9 @@ library("ggplot2")
 library("plotly")
 library("shinythemes")
 source("vis_2.R")
-source("interactive_map.R")
+source("vis_1.R")
 ui <- fluidPage(
+  includeCSS("style.css"),
   h1("Info 201 Final Delivarable BF-3"),
   h2(em("COVID-19"), "Data Analysis and Conclusion"),
   p("overview"),
@@ -28,7 +29,7 @@ page_summary <- tabPanel (
 
 # Pass each page to a multi-page layout
 nav <- navbarPage(
-  "Interactives & Summary",
+  "Navigation Bar",
   page_one,
   page_two,
   page_three,

@@ -41,8 +41,8 @@ page_two_main <- mainPanel(
 
 # Visualization 2
 page_two <- tabPanel(
-  "COVID 19 Cases by Gender",
-  titlePanel("Comparing COVID 19 Cases by gender versus age group"),
+  "Interactive 2",
+  titlePanel("Comparing COVID 19 Cases by gender versus Age Group"),
   
   sidebarLayout(
     slider2,

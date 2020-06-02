@@ -3,7 +3,7 @@ library("dplyr")
 library("ggplot2")
 library("plotly")
 source("vis_2.R")
-source("interactive_map.R")
+source("vis_1.R")
 server <- function(input, output) {
   
   # Show the map
