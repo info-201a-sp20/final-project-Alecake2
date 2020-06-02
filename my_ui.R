@@ -1,4 +1,11 @@
 ######### Overview Page #########
+library("shiny")
+library("dplyr")
+library("ggplot2")
+library("plotly")
+library("shinythemes")
+source("vis_2.R")
+source("interactive_map.R")
 ui <- fluidPage(
   h1("Info 201 Final Delivarable BF-3"),
   h2(em("COVID-19"), "Data Analysis and Conclusion"),
@@ -6,17 +13,7 @@ ui <- fluidPage(
   nav
 )
 
-page_one <- tabPanel(
-  "Interactive 1", 
-  titlePanel("First Interactive: ")
-  #first_page
-)
-
 # Define content for the second page
-page_two <- tabPanel(
-  "Interactive 2",
-  titlePanel("Second Interactive: ")
-)
 
 # Define content for the third page
 page_three <- tabPanel(

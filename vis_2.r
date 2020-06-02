@@ -11,14 +11,10 @@ covid_deaths <-
   )
 most_cases_covid_19 <- covid_deaths %>%
   filter(State == "United States") 
-  
-
-
 
 # Create Visualizations for Page 2
-var1_vis2 <- sidebarLayout(
-  sidebarPanel(
-    selectInput(inputId = "gender" ,
+slider2 <- sidebarPanel(
+    selectInput("gender",
                 label = h1("Choose a gender"),
                 choices = list(
                   "All Sexes" = "All Sexes",
@@ -31,23 +27,26 @@ var1_vis2 <- sidebarLayout(
                 ),
                 selected = "All Sexes"
     )
-  ),
-  mainPanel(
-    tags$h1("COVID 19 Deaths by gender"),
-    tags$p(
-      id = "vis1_descrip",
+)
+page_two_main <- mainPanel(
+  tags$h1("COVID 19 Deaths by gender"),
+  tags$p(
+    id = "vis1_descrip",
     "This page aims to display Covid 19 Data. This graph shows the
     Covid 19 death age groups depending on which gender you
     choose (You can select which gender from the side bar)",
-    ),
-    plotlyOutput("vis2")
-  )
+  ),
+  plotlyOutput("page2")
 )
 
-# Vis 2
-vis_2 <- tabPanel(
+# Visualization 2
+page_two <- tabPanel(
   "COVID 19 Cases by Gender",
   titlePanel("Comparing COVID 19 Cases by gender versus age group"),
-  var1_vis2
+  
+  sidebarLayout(
+    slider2,
+    page_two_main
+  )
 )
 

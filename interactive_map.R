@@ -4,7 +4,7 @@ library(dplyr)
 library(leaflet)
 
 # Read in data
-source("./scripts/build_map.R")
+source("scripts/build_map.R")
 
 # Add slider for choosing date
 slider <- absolutePanel(
@@ -23,40 +23,19 @@ main_content <- mainPanel(
   leafletOutput("map", width = 1300, height = 550))
 
 # Add variable for ui
-ui <- navbarPage(
-  title = "COVID-19 in the United States",
-
-  tabPanel(
-    "Positive Rates",
-
-    titlePanel("Testing Conducted in the US"),
-
-    p("We are interested to know the detail on testing conducted for each
+page_one <- tabPanel(
+  "Positive Rates",
+  titlePanel("Testing Conducted in the US"),
+  
+  p("We are interested to know the detail on testing conducted for each
     state in the US. The positive rate represents the number of posiitve
     cases out of the number of testing conducted in each state. The
     interactive map shows the pattern of the positive rates of COVID-19
-      cases in the US from January 22 to May 12, 2020."),
-
-    sidebarLayout(
-      position = "right",
-      slider,
-      main_content
-    ),
-
-    h6(p("We excluded the data for Puerto Rico state because it is not
-         reliable."))
-  )
+      cases in the US from January 22 to May 12, 2020. We excluded Puerto Rico because
+    the data is not reliable enough."),
+  
+  sidebarLayout(
+    position = "right",
+    slider,
+    main_content)
 )
-
-# Add variable for server
-server <- function(input, output) {
-
-  # Show the map
-  output$map <- renderLeaflet({
-    map <- build_map(input$plot_date)
-    return(map)
-  })
-}
-
-# Create a new `shinyApp()` using the above ui and server
-shinyApp(ui = ui, server = server)
