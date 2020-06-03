@@ -1,3 +1,4 @@
+library(lintr)
 # Analysis on COVID-19 in the United States according to different states
 
 library("dplyr")
