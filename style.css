@@ -15,9 +15,12 @@ p{
   color: black;
   font-size: 130%;
   font-family: Verdana;
-  background-color: white;
   margin: auto;
   padding: 10px;
+}
+
+p, a{
+  background-color: white;
 }
 
 body{
@@ -31,9 +34,3 @@ nav{
   color: rgb(92, 165, 164);
 }
 
-img{
-  display: block;
-  max-width: 50%;
-  margin-left: auto;
-  margin-right: auto;
-}
