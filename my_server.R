@@ -35,7 +35,7 @@ server <- function(input, output) {
     return(plot)
   })
   # output the charts for page three
-  output$vis_three <- renderPlot({
+  output$vis_three <- renderPlotly({
     habit <- input$habit
     v_three_data <- covid_county %>%
       mutate(death_rate = deaths / cases * 100) %>%
@@ -50,15 +50,13 @@ server <- function(input, output) {
       summarise(death_rate = max(death_rate),
                 habit = max(wanted_habit)
       )
+     
+    plot <- plot_ly(v_three_data, x = ~death_rate, 
+                    y = ~habit, text = ~county) %>%
+      layout(title = "Habit and Death Rate",
+             xaxis = list(title = "Covid-19 Death Rate (%)"), 
+             yaxis = list(title = paste(habit, "Percentage")))
     
-    plot <- v_three_data %>%
-      ggplot(aes(x = death_rate,
-                 y = habit
-                )
-            ) +
-      geom_point() +
-      xlab("COVID-19 Death Rate") +
-      ylab(habit)
     
     return(plot)
   })
