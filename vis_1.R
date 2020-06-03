@@ -35,6 +35,7 @@ page_one <- tabPanel(
     the data is not reliable enough."),
   
   sidebarLayout(
+    position = "right",
     slider,
     main_content)
 )
