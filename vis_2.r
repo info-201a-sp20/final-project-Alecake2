@@ -15,7 +15,7 @@ most_cases_covid_19 <- covid_deaths %>%
 # Create Visualizations for Page 2
 slider2 <- sidebarPanel(
     selectInput("gender",
-                label = h1("Choose a gender"),
+                label = h3("Choose a gender"),
                 choices = list(
                   "All Sexes" = "All Sexes",
                   "All Sexes Total" = "All Sexes Total",
@@ -29,7 +29,7 @@ slider2 <- sidebarPanel(
     )
 )
 page_two_main <- mainPanel(
-  tags$h1("COVID 19 Deaths by gender"),
+  tags$h2("COVID 19 Deaths by gender"),
   tags$p(
     id = "vis1_descrip",
     "This page aims to display Covid 19 Data. This graph shows the

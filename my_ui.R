@@ -4,17 +4,11 @@ library("dplyr")
 library("ggplot2")
 library("plotly")
 library("shinythemes")
+
 source("vis_2.R")
 source("vis_1.R")
 source("vis_3.R")
 
-# create a page with the title of project and overview
-ui <- fluidPage(
-  includeCSS("style.css"),
-  h1("Info 201 Final Delivarable BF-3"),
-  h2(em("COVID-19"), "Data Analysis and Conclusion"),
-  nav
-)
 page_intro <- tabPanel(
   "Introduction",
   titlePanel("Introduction"),
@@ -70,5 +64,13 @@ nav <- navbarPage(
   page_two,
   page_three,
   page_summary
+)
+
+# create a page with the title of project and overview
+ui <- fluidPage(
+  includeCSS("style.css"),
+  h1("Info 201 Final Delivarable BF-3"),
+  h2(em("COVID-19"), "Data Analysis and Conclusion"),
+  nav
 )
 
