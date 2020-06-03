@@ -91,16 +91,6 @@ page_summary <- tabPanel(
   p("Takeaway 3:"),
 )
 
-# Pass each page to a multi-page layout navigation bar
-nav <- navbarPage(
-  "Navigation Bar",
-  page_intro,
-  page_one,
-  page_two,
-  page_three,
-  page_summary
-)
-
 page_intro <- tabPanel(
   "Introduction",
   titlePanel("Introduction"),
@@ -109,6 +99,16 @@ page_intro <- tabPanel(
           data_2,
           data_3
   )
+)
+
+# Pass each page to a multi-page layout navigation bar
+nav <- navbarPage(
+  "Navigation Bar",
+  page_intro,
+  page_one,
+  page_two,
+  page_three,
+  page_summary
 )
 
 # create a page with the title of project and overview
