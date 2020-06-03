@@ -18,7 +18,7 @@ intro_paragraph <- list(
            alt = "Corona Virus"),
   p("Our project focuses on the effect of COVID-19 in the United States.
     This spring, we have this unfortunate outbreak of virus that has threathen
-    hundreds of thoudsands of lives int the U.S., and even more around the
+    hundreds of thousands of lives int the U.S., and even more around the
     world. Our group hopes that, with our effort and analysis on multiple
     datasets about the COVID-19, we can arouse more viligance and help people
     to stay wise during this special time.After looking through a few of
@@ -50,7 +50,7 @@ data_2 <- list(
 )
 
 data_3 <- list(
-  tags$p("The thrid questin is: What effect does unhealthy habbit have on",
+  tags$p("The thrid question is: What effect does unhealthy habbit have on",
     "affecting rate. For this question we use a comprehensive one about each",
     "U.S county, which collects information related to their weather",
     "socio/health and COVID-19 situation. Since its size exceeds the",
