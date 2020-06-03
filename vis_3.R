@@ -16,9 +16,9 @@ slider3 <- sidebarPanel(
   selectInput(
     inputId = "habbit",
     label = "Habbits",
-    choices = c("percent_smokers", 
+    choices = c("percent_smokers",
                 "percent_adults_with_obesity",
-                "percent_excessive_drinking", 
+                "percent_excessive_drinking",
                 "percent_physically_inactive",
                 "percent_insufficient_sleep"),
     selected = "percent_smokers"

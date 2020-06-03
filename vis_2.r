@@ -10,7 +10,7 @@ covid_deaths <-
            stringsAsFactors = FALSE, encoding = "UTF-8"
   )
 most_cases_covid_19 <- covid_deaths %>%
-  filter(State == "United States") 
+  filter(State == "United States")
 
 # Create Visualizations for Page 2
 slider2 <- sidebarPanel(
@@ -43,10 +43,8 @@ page_two_main <- mainPanel(
 page_two <- tabPanel(
   "Interactive 2",
   titlePanel("Comparing COVID 19 Cases by gender versus Age Group"),
-  
   sidebarLayout(
     slider2,
     page_two_main
   )
 )
-

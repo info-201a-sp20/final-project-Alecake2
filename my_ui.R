@@ -9,21 +9,32 @@ source("vis_2.R")
 source("vis_1.R")
 source("vis_3.R")
 source("takeaway_1.R")
+source("takeaway_2.R")
 
 
 #introduction paragraph overview tag list
 intro_paragraph <- list(
   tags$img(src = "https://fresnostate.edu/president/coronavirus/images/coronavirus-gov.jpg",
            alt = "Corona Virus"),
-  p("Our project focuses on the effect of COVID-19 in the United States. This spring, we have this unfortunate outbreak of virus that has threathen hundreds of thoudsands of lives int the U.S., and even more around the world. Our group hopes that, with our effort and analysis on multiple datasets about the COVID-19, we can arouse more viligance and help people to stay wise during this special time.After looking through a few of datasets online, we raised a couple of data-driven question, and try to show our insight to these question by data gathering and data visualization.")
+  p("Our project focuses on the effect of COVID-19 in the United States.
+    This spring, we have this unfortunate outbreak of virus that has threathen
+    hundreds of thoudsands of lives int the U.S., and even more around the
+    world. Our group hopes that, with our effort and analysis on multiple
+    datasets about the COVID-19, we can arouse more viligance and help people
+    to stay wise during this special time.After looking through a few of
+    datasets online, we raised a couple of data-driven question, and try to
+    show our insight to these question by data gathering and data
+    visualization.")
 )
 
 
 # dataset 1 description
 data_1 <- list(
-  tags$p("The first question is: what is the percentage of positive result from the total number of testing as date moving on from March to May.",
-    "We will use the dataset us_states_covid19_daily.csv which give the daily count of COVID-19 cases in each day. The link of this dataset is ",
-    tags$a(href="https://www.kaggle.com/sudalairajkumar/covid19-in-usa?select=us_states_covid19_daily.csv",
+  tags$p("The first question is: what is the percentage of positive result from
+         the total number of testing as date moving on from March to May.",
+    "We will use the dataset us_states_covid19_daily.csv which give the daily
+    count of COVID-19 cases in each day. The link of this dataset is ",
+    tags$a(href = "https://www.kaggle.com/sudalairajkumar/covid19-in-usa?select=us_states_covid19_daily.csv",
            "first dataset")
     )
 )
@@ -33,7 +44,7 @@ data_2 <- list(
     "male and female. For this question we use tge provisional COVID-19 Death",
     "Counts dataset based on states, sex and ages that could help us understand",
     "the bigger picture.The link of this dataset is ",
-    tags$a(href="https://www.kaggle.com/paultimothymooney/latitude-and-longitude-for-every-country-and-state",
+    tags$a(href = "https://www.kaggle.com/paultimothymooney/latitude-and-longitude-for-every-country-and-state",
          "second dataset")
   )
 )
@@ -44,7 +55,7 @@ data_3 <- list(
     "U.S county, which collects information related to their weather",
     "socio/health and COVID-19 situation. Since its size exceeds the",
     "upload limit, we have cleaned and truncate it. The Link is: ",
-    tags$a(href="https://www.kaggle.com/johnjdavisiv/us-counties-covid19-weather-sociohealth-data",
+    tags$a(href = "https://www.kaggle.com/johnjdavisiv/us-counties-covid19-weather-sociohealth-data",
            "third dataset")
   )
 )
@@ -63,7 +74,7 @@ page_summary <- tabPanel(
     below mapped on March 5, which indicates the starting of the pandemic
     across the states."),
 
-  img(map_march_5),
+  map_march_5,
 
   p("The spiking of positive rates in the East Coast in March implies the delay
   in testing conducted in those areas causing the wild spread of the
@@ -73,7 +84,7 @@ page_summary <- tabPanel(
 
   h3("Interactive Two"),
 
-  p("Takeaway 2:"),
+  take_away_2,
 
   h3("Interactive Three"),
 
