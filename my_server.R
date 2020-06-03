@@ -10,13 +10,11 @@ source("vis_3.R")
 
 # Add variable for server
 server <- function(input, output) {
-  
   # output the first page map
   output$map <- renderLeaflet({
     map <- build_map(input$plot_date)
     return(map)
   })
-  
   # output the second page plot
   output$page2 <- renderPlotly({
     df <- most_cases_covid_19 %>%
@@ -36,8 +34,7 @@ server <- function(input, output) {
       )
     return(plot)
   })
-  
-  # output the charts for page three 
+  # output the charts for page three
   output$vis_three <- renderPlot({
     habit <- input$habit
     v_three_data <- covid_county %>%
@@ -66,4 +63,3 @@ server <- function(input, output) {
     return(plot)
   })
 }
-

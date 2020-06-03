@@ -24,13 +24,13 @@ slider3 <- sidebarPanel(
   )
 )
 
-main_content_3 <- mainPanel(
+  main_content_3 <- mainPanel(
   #here make your title
   tags$h3("COVID_19 Death Rate and Unhealthy Habits"),
   # here your description
   tags$p(""),
   plotOutput("vis_three")
-)
+  )
 
 page_three <- tabPanel(
   "Interactive 3",
