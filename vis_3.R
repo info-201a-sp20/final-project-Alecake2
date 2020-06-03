@@ -1,6 +1,5 @@
 library("shiny")
 library("shinyWidgets")
-source("scripts/vis_3_scattet.R")
 library(ggplot2)
 library(ggrepel)
 library(tidyverse)
@@ -14,20 +13,20 @@ covid_county <- read.csv("data/cleaned_data.csv",
 
 slider3 <- sidebarPanel(
   selectInput(
-    inputId = "habbit",
-    label = "Habbits",
-    choices = c("percent_smokers", 
-                "percent_adults_with_obesity",
-                "percent_excessive_drinking", 
-                "percent_physically_inactive",
-                "percent_insufficient_sleep"),
-    selected = "percent_smokers"
+    inputId = "habit",
+    label = "Habits",
+    choices = c("Smoking", 
+                "Obesity",
+                "Drinking", 
+                "Inactive",
+                "Lack_Sleep"),
+    selected = "Smoking"
   )
 )
 
 main_content_3 <- mainPanel(
   #here make your title
-  tags$h3("v3 title"),
+  tags$h3("COVID_19 Death Rate and Unhealthy Habits"),
   # here your description
   tags$p(""),
   plotOutput("vis_three")
@@ -35,7 +34,7 @@ main_content_3 <- mainPanel(
 
 page_three <- tabPanel(
   "Interactive 3",
-  titlePanel("V3"),
+  titlePanel("Association Between Covid-19 Death Rate and Unhealthy Habits"),
   sidebarLayout(
     slider3,
     main_content_3

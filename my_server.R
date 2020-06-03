@@ -2,6 +2,7 @@ library("shiny")
 library("dplyr")
 library("ggplot2")
 library("plotly")
+library("tidyverse")
 
 source("vis_2.R")
 source("vis_1.R")
@@ -38,8 +39,31 @@ server <- function(input, output) {
   
   # output the charts for page three 
   output$vis_three <- renderPlot({
-    habbit <- input$habbit
-    return(create_plot(covid_county, habbit))
+    habit <- input$habit
+    v_three_data <- covid_county %>%
+      mutate(death_rate = deaths / cases * 100) %>%
+      rename(Smoking = percent_smokers, 
+             Obesity = percent_adults_with_obesity, 
+             Drinking = percent_excessive_drinking, 
+             Inactive = percent_physically_inactive, 
+             Lack_Sleep = percent_insufficient_sleep) %>%
+      rename(wanted_habit = habit) %>%
+      select(county, death_rate, wanted_habit) %>%
+      group_by(county) %>%
+      summarise(death_rate = max(death_rate),
+                habit = max(wanted_habit)
+      )
+    
+    plot <- v_three_data %>%
+      ggplot(aes(x = death_rate,
+                 y = habit
+                )
+            ) +
+      geom_point() +
+      xlab("COVID-19 Death Rate") +
+      ylab(habit)
+    
+    return(plot)
   })
 }
 
