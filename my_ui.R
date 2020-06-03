@@ -9,16 +9,6 @@ source("vis_2.R")
 source("vis_1.R")
 source("vis_3.R")
 
-page_intro <- tabPanel(
-  "Introduction",
-  titlePanel("Introduction"),
-  tagList(intro_paragraph,
-          data_1,
-          data_2,
-          data_3
-  )
-)
-
 #introduction paragraph overview tag list
 intro_paragraph <- list(
   tags$img(src = "https://fresnostate.edu/president/coronavirus/images/coronavirus-gov.jpg",
@@ -56,6 +46,16 @@ page_summary <- tabPanel(
   p("Takeaway 1: \n Takeaway 2: \n Takeaway 3:")
 )
 
+page_intro <- tabPanel(
+  "Introduction",
+  titlePanel("Introduction"),
+  tagList(intro_paragraph,
+          data_1,
+          data_2,
+          data_3
+  )
+)
+
 # Pass each page to a multi-page layout navigation bar
 nav <- navbarPage(
   "Navigation Bar",
@@ -65,6 +65,7 @@ nav <- navbarPage(
   page_three,
   page_summary
 )
+
 
 # create a page with the title of project and overview
 ui <- fluidPage(
