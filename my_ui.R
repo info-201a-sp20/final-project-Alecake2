@@ -52,12 +52,12 @@ page_summary <- tabPanel(
     the East Coast of the US as the dates approached May. We can also see
     the beginning spread of COVID-19 cases spikes in early March, although
     the first case was in Washington state at the end of January. The map
-    below mapped on May 5, which indicates the starting of the pandemic
+    below mapped on March 5, which indicates the starting of the pandemic
     across the states."),
   
   img(map_may_5),
   
-  p("The spiking of positive rates in the East Coast in May implies the delay
+  p("The spiking of positive rates in the East Coast in March implies the delay
   in testing conducted in those areas causing the wild spread of the
   virus. Besides, we might want to question the effectiveness of our way of
   conducting testing because our way of testing can control the spread of the
