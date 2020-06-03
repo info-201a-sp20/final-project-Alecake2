@@ -27,8 +27,11 @@ slider3 <- sidebarPanel(
   main_content_3 <- mainPanel(
   #here make your title
   tags$h3("COVID_19 Death Rate and Unhealthy Habits"),
-  # here your description
-  tags$p(""),
+  tags$p(class = "desciption",
+         "This position chart explore the death rate in different counties in
+         the US based on different unhealthy habits. The chart means to 
+         discover if unhealthy habits have any relation with the death
+         rate of COVID-19"),
   plotOutput("vis_three")
   )
 

@@ -29,9 +29,9 @@ slider2 <- sidebarPanel(
     )
 )
 page_two_main <- mainPanel(
-  tags$h2("COVID 19 Deaths by gender"),
+  tags$h3("COVID 19 Deaths by gender"),
   tags$p(
-    id = "vis1_descrip",
+    class = "description",
     "This page aims to display Covid 19 Data. This graph shows the
     Covid 19 death age groups depending on which gender you
     choose (You can select which gender from the side bar)",

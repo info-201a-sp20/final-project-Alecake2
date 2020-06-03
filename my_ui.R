@@ -10,7 +10,7 @@ source("vis_1.R")
 source("vis_3.R")
 source("takeaway_1.R")
 source("takeaway_2.R")
-
+source("takeaway_3.R")
 
 #introduction paragraph overview tag list
 intro_paragraph <- list(
@@ -73,9 +73,9 @@ page_summary <- tabPanel(
     the first case was in Washington state at the end of January. The map
     below mapped on March 5, which indicates the starting of the pandemic
     across the states."),
-
-  map_march_5,
-
+  
+  div(style = "width: 80%; margin: auto;", map_march_5),
+  
   p("The spiking of positive rates in the East Coast in March implies the delay
   in testing conducted in those areas causing the wild spread of the
   virus. Besides, we might want to question the effectiveness of our way of
@@ -88,7 +88,7 @@ page_summary <- tabPanel(
 
   h3("Interactive Three"),
 
-  p("Takeaway 3:"),
+  take_away_3,
 )
 
 page_intro <- tabPanel(
