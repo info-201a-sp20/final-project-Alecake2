@@ -12,6 +12,21 @@ library(leaflet)
 covid_county <- read.csv("data/cleaned_data.csv",
                          stringsAsFactors = FALSE)
 
+slider3 <- sidebarPanel(
+  selectInput(
+    inputId = "habbit",
+    label = "Habbits",
+    choices = c("percent_smokers", "percent_adults_with_obesity",
+                "percent_excessive_drinking", "percent_physically_inactive",
+                "percent_insufficient_sleep"),
+    selected = "percent_smokers"
+  )
+)
+
+main_content_3 <- mainPanel(
+  plotOutput("vis_three")
+)
+
 page_three <- tabPanel(
   "Interactive 3",
   titlePanel("V3"),
@@ -19,16 +34,4 @@ page_three <- tabPanel(
     slider3,
     main_content_3
   )
-)
-slider3 <- sidebarPanel(
-  selectInput(
-    inputId = "habbit",
-    label = "Habbits",
-    choices = c("percent_smokers", "percent_adults_with_obesity",
-                "percent_excessive_drinking", "percent_physically_inactive",
-                "percent_insufficient_sleep")
-  )
-)
-main_content_3 <- mainPanel(
-  plotOutput("vis_three")
 )

@@ -1,3 +1,4 @@
+library(lintr)
 # Set Up
 library("tidyverse")
 library("leaflet")
@@ -5,6 +6,7 @@ library("leaflet")
 # Load the data needed for the chart
 covid_cases <- read.csv("./data/us_states_covid19_daily.csv",
                         stringsAsFactors = FALSE)
+# Update the date column
 covid_cases$date <- as.Date(as.character(covid_cases$date), format = "%Y%m%d")
 
 # Load the dataframe that contains coordinates of
@@ -61,7 +63,7 @@ create_map <- function(df) {
     )
 }
 
-# Combined the both function into one function. Use date(in string)
+# Combined the both functions into one function. Use date(in string)
 # for plotting the graph.
 build_map <- function(str_date) {
   # create dataframe for chosen date

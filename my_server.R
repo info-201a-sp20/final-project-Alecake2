@@ -2,9 +2,12 @@ library("shiny")
 library("dplyr")
 library("ggplot2")
 library("plotly")
+
 source("vis_2.R")
 source("vis_1.R")
 source("vis_3.R")
+
+# Add variable for server
 server <- function(input, output) {
   
   # output the first page map
