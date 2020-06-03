@@ -16,14 +16,20 @@ slider3 <- sidebarPanel(
   selectInput(
     inputId = "habbit",
     label = "Habbits",
-    choices = c("percent_smokers", "percent_adults_with_obesity",
-                "percent_excessive_drinking", "percent_physically_inactive",
+    choices = c("percent_smokers", 
+                "percent_adults_with_obesity",
+                "percent_excessive_drinking", 
+                "percent_physically_inactive",
                 "percent_insufficient_sleep"),
     selected = "percent_smokers"
   )
 )
 
 main_content_3 <- mainPanel(
+  #here make your title
+  tags$h3("v3 title"),
+  # here your description
+  tags$p(""),
   plotOutput("vis_three")
 )
 
