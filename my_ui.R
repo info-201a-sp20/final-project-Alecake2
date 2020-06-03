@@ -63,7 +63,7 @@ page_summary <- tabPanel(
     below mapped on March 5, which indicates the starting of the pandemic
     across the states."),
 
-  img(map_may_5),
+  img(map_march_5),
 
   p("The spiking of positive rates in the East Coast in March implies the delay
   in testing conducted in those areas causing the wild spread of the
@@ -77,29 +77,7 @@ page_summary <- tabPanel(
 
   h3("Interactive Three"),
 
-  p("\n Takeaway 3:"),
-)
-
-?img()
-
-page_intro <- tabPanel(
-  "Introduction",
-  titlePanel("Introduction"),
-  tagList(intro_paragraph,
-          data_1,
-          data_2,
-          data_3
-  )
-)
-
-page_intro <- tabPanel(
-  "Introduction",
-  titlePanel("Introduction"),
-  tagList(intro_paragraph,
-          data_1,
-          data_2,
-          data_3
-  )
+  p("Takeaway 3:"),
 )
 
 # Pass each page to a multi-page layout navigation bar
