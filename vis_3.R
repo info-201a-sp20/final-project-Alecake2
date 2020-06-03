@@ -1,6 +1,6 @@
 library("shiny")
 library("shinyWidgets")
-source("scripts/script.R")
+source("scripts/vis_3_scattet.R")
 library(ggplot2)
 library(ggrepel)
 library(tidyverse)
