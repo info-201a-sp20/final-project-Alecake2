@@ -8,6 +8,7 @@ library("shinythemes")
 source("vis_2.R")
 source("vis_1.R")
 source("vis_3.R")
+source("takeaway_1.R")
 
 
 #introduction paragraph overview tag list
@@ -45,7 +46,44 @@ data_3 <- list(
 page_summary <- tabPanel(
   "Summary Takeaways",
   titlePanel("Summary Takeaways"),
-  p("Takeaway 1: \n Takeaway 2: \n Takeaway 3:")
+  
+  # Takeaway for Interactive One
+  h3("Interactive One"),
+  
+  p("From the interactive map, we can see that the rising positive rates in
+    the East Coast of the US as the dates approached May. We can also see
+    the beginning spread of COVID-19 cases spikes in early March, although
+    the first case was in Washington state at the end of January. The map
+    below mapped on March 5, which indicates the starting of the pandemic
+    across the states."),
+  
+  img(map_may_5),
+  
+  p("The spiking of positive rates in the East Coast in March implies the delay
+  in testing conducted in those areas causing the wild spread of the
+  virus. Besides, we might want to question the effectiveness of our way of
+  conducting testing because our way of testing can control the spread of the
+  disease, especially in communities."),
+  
+  h3("Interactive Two"),
+  
+  p("Takeaway 2:"),
+  
+  h3("Interactive Three"),
+  
+  p("\n Takeaway 3:"),
+)
+
+?img()
+
+page_intro <- tabPanel(
+  "Introduction",
+  titlePanel("Introduction"),
+  tagList(intro_paragraph,
+          data_1,
+          data_2,
+          data_3
+  )
 )
 
 page_intro <- tabPanel(
@@ -67,6 +105,7 @@ nav <- navbarPage(
   page_three,
   page_summary
 )
+
 
 # create a page with the title of project and overview
 ui <- fluidPage(
