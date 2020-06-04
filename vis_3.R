@@ -19,24 +19,23 @@ slider3 <- sidebarPanel(
                 "Obesity",
                 "Drinking", 
                 "Inactive",
-                "Lack_Sleep"),
+                "Lack of Sleep"),
     selected = "Smoking"
   )
 )
 
   main_content_3 <- mainPanel(
-  tags$h3("COVID_19 Death Rate and Unhealthy Habits"),
   tags$p(class = "description",
-         "This position chart explore the death rate in different counties in
-         the US based on different unhealthy habits. The chart means to 
+         "This position chart explores the death rate in different counties in
+         the U.S. based on different unhealthy habits. The chart means to 
          discover if unhealthy habits have any relation with the death
-         rate of COVID-19"),
+         rate of COVID-19."),
   plotlyOutput("vis_three")
   )
 
 page_three <- tabPanel(
   "Interactive 3",
-  titlePanel("Association Between Covid-19 Death Rate and Unhealthy Habits"),
+  titlePanel("COVID-19 Death Rate and Unhealthy Habits"),
   sidebarLayout(
     slider3,
     main_content_3

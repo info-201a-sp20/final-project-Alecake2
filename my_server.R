@@ -22,15 +22,17 @@ server <- function(input, output) {
     plot <- ggplot(data = df) +
       geom_col(mapping = aes_string(
         x = "Age.group",
-        y = "COVID.19.Deaths"
+        y = "COVID.19.Deaths",
+        fill = "Age.group"
       )) +
       theme(axis.text.x = element_text(
         angle = 90, hjust = 1
       )) +
+      theme(legend.position = "none") +
       labs(
-        title = "COVID_19 deaths per age group",
+        title = "COVID-19 deaths per Age Group",
         x = "Age Group",
-        y = "COVID_19 deaths"
+        y = "Number of deaths"
       )
     return(plot)
   })
