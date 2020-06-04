@@ -26,7 +26,7 @@ page_one <- tabPanel(
   "Interactive 1",
   titlePanel("Positive Rate of COVID-19 in the United States"),
 
-  p(class = "description", 
+  p(class = "description",
   "We want to know how many testing has been conducted daily
   in each state, and we also want to analyze the positive rate
   of the coronavirus across the U.S. The positive rate represents the

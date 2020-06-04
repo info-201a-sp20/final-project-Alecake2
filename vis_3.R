@@ -15,9 +15,9 @@ slider3 <- sidebarPanel(
   selectInput(
     inputId = "habit",
     label = "Habits",
-    choices = c("Smoking", 
+    choices = c("Smoking",
                 "Obesity",
-                "Drinking", 
+                "Drinking",
                 "Inactive",
                 "Lack of Sleep"),
     selected = "Smoking"
@@ -27,7 +27,7 @@ slider3 <- sidebarPanel(
   main_content_3 <- mainPanel(
   tags$p(class = "description",
          "This position chart explores the death rate in different counties in
-         the U.S. based on different unhealthy habits. The chart means to 
+         the U.S. based on different unhealthy habits. The chart means to
          discover if unhealthy habits have any relation with the death
          rate of COVID-19."),
   plotlyOutput("vis_three")

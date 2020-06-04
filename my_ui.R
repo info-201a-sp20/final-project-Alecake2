@@ -41,10 +41,10 @@ data_1 <- list(
 )
 
 data_2 <- list(
-  tags$p("The second question is: What is the death rate in every age group for",
-    "male and female. For this question we use the provisional COVID-19 Death",
-    "Counts dataset based on states, sex and ages that could help us understand",
-    "the bigger picture. The link of this dataset is ",
+  tags$p("The second question is: What is the death rate in every age group",
+    "for male and female. For this question we use the provisional COVID-19",
+    "Death Counts dataset based on states, sex and ages that could help us",
+    "understand the bigger picture. The link of this dataset is ",
     tags$a(href = "https://www.kaggle.com/paultimothymooney/latitude-and-longitude-for-every-country-and-state",
          "second dataset")
   )

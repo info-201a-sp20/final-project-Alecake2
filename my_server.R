@@ -41,10 +41,10 @@ server <- function(input, output) {
     habit <- input$habit
     v_three_data <- covid_county %>%
       mutate(death_rate = deaths / cases * 100) %>%
-      rename(Smoking = percent_smokers, 
-             Obesity = percent_adults_with_obesity, 
-             Drinking = percent_excessive_drinking, 
-             Inactive = percent_physically_inactive, 
+      rename(Smoking = percent_smokers,
+             Obesity = percent_adults_with_obesity,
+             Drinking = percent_excessive_drinking,
+             Inactive = percent_physically_inactive,
              Lack_Sleep = percent_insufficient_sleep) %>%
       rename(wanted_habit = habit) %>%
       select(county, death_rate, wanted_habit) %>%
@@ -52,14 +52,13 @@ server <- function(input, output) {
       summarise(death_rate = max(death_rate),
                 habit = max(wanted_habit)
       )
-     
-    plot <- plot_ly(v_three_data, x = ~death_rate, 
+
+    plot <- plot_ly(v_three_data, x = ~death_rate,
                     y = ~habit, text = ~county) %>%
       layout(title = "Habit and Death Rate",
-             xaxis = list(title = "Covid-19 Death Rate (%)"), 
+             xaxis = list(title = "Covid-19 Death Rate (%)"),
              yaxis = list(title = paste(habit, "Percentage")))
-    
-    
+
     return(plot)
   })
 }

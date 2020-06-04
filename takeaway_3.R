@@ -17,8 +17,6 @@ habits(smoking, drinking, physically inactive, and insufficient sleep) appear
 to be randomly distributed. However, we can't firmly conclude that there is no
 association between those habits and COVID-19 death rate, because the sample
 size is relatively small when we use county as individual data point. Also, as
-we can see, there are", zeros,"counties with zero percent death rate and",
-hundres, "counties with one hundred percent death rate. Those extreme values 
+we can see, there are", zeros, "counties with zero percent death rate and",
+hundres, "counties with one hundred percent death rate. Those extreme values
 for COVID-19 death could alter the result heavily.")
-
-
