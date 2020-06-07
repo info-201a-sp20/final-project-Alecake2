@@ -1,4 +1,3 @@
-library(lintr)
 # Set Up
 library("tidyverse")
 library("leaflet")
