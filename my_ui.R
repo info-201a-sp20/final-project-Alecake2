@@ -18,7 +18,7 @@ intro_paragraph <- list(
   tags$img(src = "https://fresnostate.edu/president/coronavirus/images/coronavirus-gov.jpg",
            alt = "Corona Virus"),
   p("Our project focuses on the effect of COVID-19 in the United States.
-    This spring, we have this unfortunate outbreak of virus that has threathen
+    This spring, we have this unfortunate outbreak of virus that has threathened
     hundreds of thousands of lives in the U.S., and even more around the
     world. Our group hopes that, with our effort and analysis on multiple
     datasets about the COVID-19, we can arouse more viligance and help people
@@ -51,8 +51,8 @@ data_2 <- list(
 )
 
 data_3 <- list(
-  tags$p("The third question is: What effect does unhealthy habbit have on",
-    "affecting rate. For this question, we use a comprehensive one about each",
+  tags$p("The third question is: What effect does unhealthy habit have on",
+    "affecting rate? For this question, we use a comprehensive one about each",
     "U.S county, which collects information related to their weather",
     "socio/health and COVID-19 situation. Since its size exceeds the",
     "upload limit, we have cleaned and truncate it. The link of this dataset",
@@ -69,7 +69,7 @@ page_summary <- tabPanel(
   # Takeaway for Interactive One
   h3("Interactive One"),
 
-  p("From the interactive map, we can see that the rising positive rates in
+  p("From the interactive map, we can see the rising positive rates in
     the East Coast of the U.S. as the dates approached May. We can also see
     the beginning spread of COVID-19 cases spikes in early March, although
     the first case was in Washington state at the end of January. The map
