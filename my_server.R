@@ -4,7 +4,7 @@ library("ggplot2")
 library("plotly")
 library("tidyverse")
 
-source("vis_2.R")
+source("vis_2.r")
 source("vis_1.R")
 source("vis_3.R")
 

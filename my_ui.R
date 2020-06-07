@@ -5,7 +5,7 @@ library("ggplot2")
 library("plotly")
 library("shinythemes")
 
-source("vis_2.R")
+source("vis_2.r")
 source("vis_1.R")
 source("vis_3.R")
 source("takeaway_1.R")
@@ -50,7 +50,7 @@ data_2 <- list(
 )
 
 data_3 <- list(
-  tags$p("The thrid questin is: What effect does unhealthy habbit have on",
+  tags$p("The third question is: What effect does unhealthy habbit have on",
     "affecting rate. For this question we use a comprehensive one about each",
     "U.S county, which collects information related to their weather",
     "socio/health and COVID-19 situation. Since its size exceeds the",
