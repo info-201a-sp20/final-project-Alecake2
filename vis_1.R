@@ -1,4 +1,3 @@
-library(lintr)
 # Load libraries
 library(shiny)
 library(dplyr)

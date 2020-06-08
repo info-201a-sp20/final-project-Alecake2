@@ -20,4 +20,3 @@ size is relatively small when we use county as individual data point. Also, as
 we can see, there are", zeros, "counties with zero percent death rate and",
 hundres, "counties with one hundred percent death rate. Those extreme values
 for COVID-19 death could alter the result heavily.")
-
